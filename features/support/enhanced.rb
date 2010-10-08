@@ -1,5 +1,5 @@
 # Setup all the config infor
-ondemand = YAML.load_file("ondemand.yml")
+ondemand = YAML.load_file("config/ondemand.yml")
 config = {
   :os =>       ENV['SELENIUM_BROWSER_OS'],
   :browser =>  ENV['SELENIUM_BROWSER_NAME'],
@@ -30,7 +30,7 @@ Before do |scenario|
   @browser = Selenium::Client::Driver.new(
                                           :host => "saucelabs.com",
                                           :port => 4444,
-                                          :browser => 
+                                          :browser =>
                                           {
                                             "username" => config[:username],
                                             "access-key" => config[:api_key],
